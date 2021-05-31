@@ -40,23 +40,23 @@
         <h1 style="text-align: center">Danh sách sản phẩm</h1>
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Describe</th>
-                <th>Supplier_name</th>
-            </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Describe</th>
+                    <th>Supplier_name</th>
+                </tr>
             </thead>
             <tbody>
-            <?php
-                foreach($dssanpham as $sp){?>
-                    <tr>
-                        <td><?php echo $sp["name"]?></td>
-                        <td><?php echo $sp["price"]?></td>
-                        <td><?php echo $sp["describe"]?></td>
-                        <td><?php echo $sp["supplier_name"]?></td>
-                    </tr>
-                <?php } ?>
+                 <?php
+                     foreach($dssanpham as $sp){?>
+                        <tr>
+                            <td><?php echo $sp["name"]?></td>
+                            <td><?php echo $sp["price"]?></td>
+                            <td><?php echo $sp["describe"]?></td>
+                            <td><?php echo $sp["supplier_name"]?></td>
+                        </tr>
+                 <?php } ?>
             </tbody>
         </table>
     </div>
