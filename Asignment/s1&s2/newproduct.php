@@ -20,28 +20,22 @@
                 <a class="nav-link active" href="newproduct.php">Thêm mới 1 sản phẩm</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="editproduct.php">Sửa 1 sản phẩm</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="listcategory.php">Danh sách các thể loại</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Thêm mới 1 thể loại</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sửa thể loại</a>
-            </li>
         </ul>
     </div>
     <h1 class="p-2" style="text-align: center">Thêm mới sản phẩm</h1>
-    <form>
+    <form action="savesp.php"  method="POST">
         <div class="form-group" >
-            <input class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên sản phẩm...">
-            <input class="form-control input-lg m-3" id="inputlg" type="text"  placeholder="Nhập giá sản phẩm...">
-            <input class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Mô tả sản phẩm ...">
-            <input class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên nhà cung cấp ...">
+            <input name="ten" class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên sản phẩm...">
+            <input name="gia" class="form-control input-lg m-3" id="inputlg" type="number"  placeholder="Nhập giá sản phẩm...">
+            <input name="mota" class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Mô tả sản phẩm ...">
+            <input name="tenncc" class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên nhà cung cấp ...">
         </div>
-        <button type="button" class="btn btn-success float-end">Thêm sản phẩm</button>
+        <button type="submit" class="btn btn-success float-end">Thêm sản phẩm</button>
     </form>
 </div>
 </body>

@@ -20,28 +20,47 @@
                 <a class="nav-link" href="newproduct.php">Thêm mới 1 sản phẩm</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="editproduct.php">Sửa 1 sản phẩm</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="listcategory.php">Danh sách các thể loại</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Thêm mới 1 thể loại</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sửa thể loại</a>
-            </li>
         </ul>
     </div>
     <h1 class="p-2" style="text-align: center">Sửa sản phẩm</h1>
-    <form>
+
+    <?php
+    $id = $_GET['id'];
+    $servername = "localhost";
+    $username = "root";
+    $password = ""; // neu dung mamp password: root
+    $db = "t2008m_php";
+    // create connection
+    $conn = new mysqli($servername,$username,$password,$db);
+    // kiem tra ket noi
+    if($conn->connect_error){
+        die("Connect error...");// die lam dung luong chuong trinh tai day
+    }
+
+    $sql_txt = "select * from sanpham where id = $id";
+    $rs = $conn->query($sql_txt);
+    $sp = null;
+    if($rs->num_rows>0){
+        while($row = $rs->fetch_assoc()){
+            $sp = $row;
+            break;
+        }
+    }
+    if($sp == null) header("location: listproduct.php");
+    ?>
+    <form  action="capnhat.php"  method="POST">
         <div class="form-group" >
-            <input class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên sản phẩm...">
-            <input class="form-control input-lg m-3" id="inputlg" type="text"  placeholder="Nhập giá sản phẩm...">
-            <input class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Mô tả sản phẩm ...">
-            <input class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên nhà cung cấp ...">
+            <input name="ten" class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên sản phẩm..." value="<?php echo $sp["ten"];?>">
+            <input name="gia" class="form-control input-lg m-3" id="inputlg" type="text"  placeholder="Nhập giá sản phẩm..." value="<?php echo $sp["gia"];?>">
+            <input name="mota" class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Mô tả sản phẩm ..." value="<?php echo $sp["mota"];?>">
+            <input name="tenncc" class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên nhà cung cấp ..." value="<?php echo $sp["tenncc"];?>">
         </div>
-        <button type="button" class="btn btn-success float-end">Sửa sản phẩm</button>
+        <button type="submit" class="btn btn-success float-end">Sửa sản phẩm</button>
     </form>
 </div>
 </body>
