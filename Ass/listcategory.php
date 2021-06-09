@@ -21,16 +21,10 @@
                 <a class="nav-link" href="newproduct.php">Thêm mới 1 sản phẩm</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="editproduct.php">Sửa 1 sản phẩm</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link active" href="listcategory.php">Danh sách các thể loại</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Thêm mới 1 thể loại</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sửa thể loại</a>
             </li>
         </ul>
     </div>

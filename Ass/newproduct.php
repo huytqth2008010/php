@@ -25,10 +25,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Thêm mới 1 thể loại</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cart.php">Giỏ hàng</a>
+            </li>
         </ul>
     </div>
-    <h1 class="p-2" style="text-align: center">Thêm mới sản phẩm</h1>
-    <form action="savesp.php"  method="POST">
+
+    <form action="savesp.php" method="POST">
         <div class="form-group" >
             <input name="ten" class="form-control input-lg m-3" id="inputlg" type="text" placeholder="Nhập tên sản phẩm...">
             <input name="gia" class="form-control input-lg m-3" id="inputlg" type="number"  placeholder="Nhập giá sản phẩm...">
